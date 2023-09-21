@@ -59,8 +59,13 @@
         <div id="caja" onclick="mostrarCarga()"></div>
         <div id="flores"></div>
         <div id="cargando">Abriendo tu cajita...</div>
+        <audio id="miCancion" preload="auto" loop>
+            <source src="ffs.wav" type="audio/mpeg"> <!-- Reemplaza 'tu_cancion.mp3' con la URL de tu canción -->
+        </audio>
     </div>
     <script>
+        var cancionReproducida = false;
+
         function mostrarCarga() {
             document.getElementById("cargando").style.display = "block";
 
@@ -70,6 +75,15 @@
                 document.getElementById("caja").style.display = "none";
                 document.getElementById("flores").style.display = "block";
                 document.getElementById("cargando").style.display = "none";
+
+                // Reproducir la canción al mostrar las flores (solo una vez)
+                if (!cancionReproducida) {
+                    var miCancion = document.getElementById("miCancion");
+                    miCancion.volume = 0.01;
+                    miCancion.currentTime = 24.7; // Establecer el tiempo de inicio en 20 segundos
+                    miCancion.play();
+                    cancionReproducida = true;
+                }
             }, 2000); // Cambia este valor para ajustar la duración de la pantalla de carga (en milisegundos)
         }
     </script>
