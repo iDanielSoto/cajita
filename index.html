@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="https://assets.stickpng.com/thumbs/58485538b772315a9e4dd5d9.png"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Noe bonita ❤️</title>
+    <style>
+        body {
+            background-color: #ffd1dc; /* Color de fondo pastel */
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            padding: 20px;
+        }
+        h1 {
+            font-family: Arial, sans-serif;
+            color: #ff9696; /* Nuevo color de texto pastel */
+        }
+        #caja {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+            background-image: url('box.png'); /* Reemplaza 'imagen_caja.jpg' con la URL de tu imagen de la caja */
+            background-size: cover;
+            cursor: pointer;
+            
+            /* Centrar la imagen dentro del contenedor */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #flores {
+            display: none;
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+
+            background-image: url('flowers.png'); /* Reemplaza 'imagen_flores.jpg' con la URL de tu imagen de flores */
+            background-size: cover;
+        }
+        #cargando {
+            display: none;
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+            padding: 10px;
+            color: #ff9696; /* Color de texto pastel */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="mensaje">Abre tu regalo, cielo</h1>
+        <div id="caja" onclick="mostrarCarga()"></div>
+        <div id="flores"></div>
+        <div id="cargando">Abriendo tu cajita...</div>
+    </div>
+    <script>
+        function mostrarCarga() {
+            document.getElementById("cargando").style.display = "block";
+
+            setTimeout(function() {
+                document.title = "🌻🌻🌻🌻🌻";
+                document.getElementById("mensaje").innerText = "Toma estas florecitas amarillas, te mereces todas las del mundo por ser la mejor novia, TE AMO ❤️\natte: dan ☆";
+                document.getElementById("caja").style.display = "none";
+                document.getElementById("flores").style.display = "block";
+                document.getElementById("cargando").style.display = "none";
+            }, 2000); // Cambia este valor para ajustar la duración de la pantalla de carga (en milisegundos)
+        }
+    </script>
+</body>
+</html>
